@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if [ ! -d /home/luke/.composer ]; then
+    mkdir /home/luke/.composer
+fi
+
+chmod -R ugo+rw /home/luke/.composer
+
+service cron start
+
+if command -v supervisord > /dev/null; then
+    echo "Running Supervisor"; \
+    supervisord -c /etc/supervisord.conf
+else
+    exec gosu luke bash
+fi
