@@ -13,6 +13,6 @@ make docker-env
 
 To bring up the Alpine nvm may be used
 
-install Node version: 24 `nvm install 24`
-install dependencies: `npm install`
-build the bundle: `npm run dev`
+- install Node version: 24 `nvm install 24`
+- install dependencies: `npm install`
+- build the bundle: `npm run dev`
